@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}{{ block.super }}{% endblock %}
+{% block style %}
+	<style>
+		body {
+			background-color: #164952;
+			background-image: url("http://www.planwallpaper.com/static/images/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg");
+			background-size: cover;
+		}
+
+		.btn-link {
+			color: #62b3f9;
+			text-shadow: none;
+		}
+
+		.btn-link:hover {
+			color: #000;
+		}
+	</style>
+{% endblock style %}
+{% block content %}
+
+	<h1 class="cover-heading">{{ title }}</h1>
+		<p class="lead">Shortener that URL</p> 
+	<p class="lead">
+		<div class="col-sm-6 col-sm-offset-3">
+			<form action="." method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input class="btn btn-primary" type="submit" value="Shorten &raquo">
+			</form>
+		</div>
+	</p>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+	{{ object.short_url }} | {{ block.super }}
+{% endblock title %}
+{% block content %}
+	<div>
+		<h1>Exists</h1>
+		{% if object.clickevent %}
+			<p>Count: {{ object.clickevent.count }}</p>
+		{% endif %}
+		<p>{{ object.url }}</p>
+		<a class="btn btn-link" href="{{ object.get_short_url }}">{{ object.get_short_url }}</a>
+		<p><a class="btn btn-default" href="/">+ New</a></p>
+	</div>
+{% endblock content %}
